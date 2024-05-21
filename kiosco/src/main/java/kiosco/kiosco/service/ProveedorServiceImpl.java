@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class ProveedorServiceImpl extends IProveedorService{
+public class ProveedorServiceImpl implements IProveedorService{
 
     @Autowired
     IProveedorRepository provRepo;
@@ -38,8 +38,10 @@ public class ProveedorServiceImpl extends IProveedorService{
             proveedor.setDiaDeVisita(nuevoProveedor.getDiaDeVisita());
             proveedor.setMontoAPagar(nuevoProveedor.getMontoAPagar());
             this.guardarProveedor(proveedor);
+        }else{
+            System.out.println("Hubo un error al editar al proveedor");
         }
-        System.out.println("Hubo un error al editar al proveedor");
+
     }
 
     @Override

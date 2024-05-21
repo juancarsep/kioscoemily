@@ -41,8 +41,10 @@ public class ProductoServiceImpl implements IProductoService{
             producto.setCantidad(nuevoProducto.getCantidad());
             producto.setProveedor((nuevoProducto.getProveedor()));
             this.guardarProducto(producto);
+        }else{
+            System.out.println("Error al editar producto");
         }
-        System.out.println("Error al editar producto");
+
     }
 
     @Override
