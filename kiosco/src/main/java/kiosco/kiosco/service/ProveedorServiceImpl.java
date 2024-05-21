@@ -3,9 +3,11 @@ package kiosco.kiosco.service;
 import kiosco.kiosco.model.Proveedor;
 import kiosco.kiosco.repository.IProveedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProveedorServiceImpl implements IProveedorService{
 
     @Autowired

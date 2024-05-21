@@ -1,7 +1,7 @@
 package kiosco.kiosco.model;
 
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,15 +13,21 @@ import java.util.List;
 @Getter @Setter
 @NoArgsConstructor
 public class Venta {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    @OneToMany
     private List<Producto> productos;
     private double precioTotal;
+    @Column
+    @Temporal(TemporalType.DATE)
     private LocalDate fecha;
 
     public Venta (List<Producto> productos, LocalDate fecha){
         this.productos = productos;
+
         this.fecha = fecha;
-        this.setPrecioTotal();
+        this.setPrecioTotal(calcularPrecioTotal());
     }
 
     public double calcularPrecioTotal(){

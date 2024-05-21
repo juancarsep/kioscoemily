@@ -3,10 +3,12 @@ package kiosco.kiosco.service;
 import kiosco.kiosco.model.Venta;
 import kiosco.kiosco.repository.IVentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class VentaServiceImpl implements IVentaService{
 
     @Autowired
